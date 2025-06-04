@@ -13,6 +13,5 @@ public class basic
         }
         System.out.println(nums);
         System.out.println(nums.get(2));
-
     }
 }

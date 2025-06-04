@@ -1,0 +1,178 @@
+✅ Top-Level: Root Interface
+java.util.Collection (interface)
+     ↑
+     |
+     ├── List
+     ├── Set
+     └── Queue
+
+> Note: `Map` is **not** a child of `Collection`. It is a separate root interface.
+
+✅ 1. Collection Interface
+
+* `Collection` is the **base interface** for all collections like `List`, `Set`, `Queue`.
+* It is **implemented by List, Set, Queue**.
+
+✅ 2. List
+
+* **Extends**: `Collection`
+* **Implements**: `ArrayList`, `LinkedList`, `Vector`, `Stack`
+
+| Class        | Implements                                          |
+| ------------ | --------------------------------------------------- |
+| `ArrayList`  | `List`, `RandomAccess`, `Cloneable`, `Serializable` |
+| `LinkedList` | `List`, `Deque`, `Cloneable`, `Serializable`        |
+| `Vector`     | `List`, `Cloneable`, `Serializable`                 |
+| `Stack`      | Inherits `Vector`                                   |
+
+✅ 3. Set
+
+* **Extends**: `Collection`
+* **Implements**: `HashSet`, `LinkedHashSet`, `TreeSet`
+
+| Class           | Implements                                                                 |
+| --------------- | -------------------------------------------------------------------------- |
+| `HashSet`       | `Set`, `Cloneable`, `Serializable`                                         |
+| `LinkedHashSet` | Inherits from `HashSet`                                                    |
+| `TreeSet`       | Implements `NavigableSet` (which extends `SortedSet`, which extends `Set`) |
+
+✅ 4. Queue
+
+* **Extends**: `Collection`
+* **Implements**: `PriorityQueue`, `LinkedList` (also implements `Deque`)
+
+ ✅ 5. Deque (Double Ended Queue)
+
+* **Extends**: `Queue`
+* **Implements**: `ArrayDeque`, `LinkedList`
+
+✅ **What is Collections in Java?**
+
+**Collections** in Java is like a **toolbox** that helps you **store, manage, and work with groups of data (like a list of names, numbers, objects, etc.)** easily.
+
+It is a **framework (set of classes and interfaces)** to work with data **efficiently**.
+
+✅ **Why do we need Collections?**
+
+Without Collections:
+
+* You have to use **arrays**, which are **fixed in size** and **not flexible**.
+* Arrays have limited methods (only `.length`, etc.).
+* Harder to insert, delete, sort, or search.
+
+With Collections:
+
+* You can use **dynamic data structures** (List, Set, Map, etc.).
+* You get many **ready-made methods** like `add()`, `remove()`, `contains()`, `sort()`, etc.
+* You can easily store and manipulate **large, complex data**.
+* Makes your code **shorter, cleaner, and faster**.
+
+✅ **When was Collections introduced?**
+
+* Java **Collections Framework** was introduced in **Java 1.2** (around 1998).
+* It got **major improvements in Java 5** with **Generics** and **enhanced for-loops**.
+
+✅ **Basic Interfaces in Collections:**
+
+| Interface | What it stores                     | Example class             |
+| --------- | ---------------------------------- | ------------------------- |
+| `List`    | Ordered collection with duplicates | `ArrayList`, `LinkedList` |
+| `Set`     | Unique elements only               | `HashSet`, `TreeSet`      |
+| `Map`     | Key-Value pairs                    | `HashMap`, `TreeMap`      |
+
+✅ **Common Syntax and Example**
+
+Example 1: Using `ArrayList` (from `List`)
+
+java
+import java.util.ArrayList;
+
+public class Example {
+    public static void main(String[] args) {
+        ArrayList<String> names = new ArrayList<>();
+
+        names.add("Keerthana");
+        names.add("Palani");
+        names.add("Java");
+
+        System.out.println("Names: " + names);
+    }
+}
+
+Example 2: Using `HashSet` (from `Set`)
+
+java
+import java.util.HashSet;
+
+public class Example {
+    public static void main(String[] args) {
+        HashSet<Integer> numbers = new HashSet<>();
+
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(10); // duplicate, will not be added
+
+        System.out.println("Unique Numbers: " + numbers);
+    }
+}
+
+Example 3: Using `HashMap` (from `Map`)
+
+java
+import java.util.HashMap;
+
+public class Example {
+    public static void main(String[] args) {
+        HashMap<String, Integer> marks = new HashMap<>();
+
+        marks.put("Math", 95);
+        marks.put("Science", 90);
+
+        System.out.println("Math Marks: " + marks.get("Math"));
+    }
+}
+
+✅ Summary
+
+| Question                         | Answer                                                                                           |
+| -------------------------------- | ------------------------------------------------------------------------------------------------ |
+| **What is Collections?**         | A set of tools to manage groups of data.                                                         |
+| **Why use it?**                  | It's flexible, powerful, and easier than arrays.                                                 |
+| **How to use it?**               | Use `import java.util.*`, then create List, Set, or Map and use methods like `add()`, `remove()` |
+| **Which version introduced it?** | Java **1.2**, improved in Java **5**.                                                            |
+
+
+
+✅ 6. Map (Key-Value Pairs)
+
+> Note: `Map` does **not extend Collection**, it is **independent**.
+
+* **Implemented by**: `HashMap`, `TreeMap`, `LinkedHashMap`, `Hashtable`, `ConcurrentHashMap`
+
+| Class               | Implements                                          |
+| ------------------- | --------------------------------------------------- |
+| `HashMap`           | `Map`, `Cloneable`, `Serializable`                  |
+| `TreeMap`           | `NavigableMap` (extends `SortedMap`, extends `Map`) |
+| `LinkedHashMap`     | Extends `HashMap`                                   |
+| `Hashtable`         | `Map`, `Cloneable`, `Serializable`                  |
+| `ConcurrentHashMap` | Implements `ConcurrentMap`, extends `Map`           |
+
+📌 Quick Summary Table
+
+| Interface/Class | Extends / Implements              |
+| --------------- | --------------------------------- |
+| `Collection`    | Extends `Iterable`                |
+| `List`          | Extends `Collection`              |
+| `Set`           | Extends `Collection`              |
+| `Queue`         | Extends `Collection`              |
+| `Deque`         | Extends `Queue`                   |
+| `Map`           | **No extension from Collection**  |
+| `ArrayList`     | Implements `List`                 |
+| `LinkedList`    | Implements `List`, `Deque`        |
+| `HashSet`       | Implements `Set`                  |
+| `LinkedHashSet` | Extends `HashSet`                 |
+| `TreeSet`       | Implements `NavigableSet` → `Set` |
+| `HashMap`       | Implements `Map`                  |
+| `TreeMap`       | Implements `NavigableMap` → `Map` |
+| `LinkedHashMap` | Extends `HashMap`                 |
+
